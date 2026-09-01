@@ -1,8 +1,8 @@
-import { Ticket } from "../../../generated/prisma/browser";
-import { Status } from "../../../generated/prisma/enums";
-import { prisma } from "../../lib/prisma";
-import { AppError } from "../../utils/globalHandler";
-import { ticketBookingData, TicketGenerationPayload } from "./types";
+import { Ticket } from "../../generated/prisma/client.js";
+import { Status } from "../../generated/prisma/client.js";
+import { prisma } from "../../lib/prisma.js";
+import { AppError } from "../../utils/globalHandler.js";
+import { ticketBookingData, TicketGenerationPayload } from "./types.js";
 
 export async function getTicketAvailability(id: number){
     

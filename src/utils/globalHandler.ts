@@ -1,5 +1,5 @@
 import type { RequestHandler, Request, Response, NextFunction, ErrorRequestHandler } from "express"
-import { Prisma } from "../../generated/prisma/client"
+import { Prisma } from "../generated/prisma/client.js"
 
 export const asyncHandler = (handler: RequestHandler) => (req: Request, res: Response, next: NextFunction) => {
     Promise.resolve(handler(req, res, next)).catch(next)

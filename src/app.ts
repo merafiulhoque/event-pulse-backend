@@ -1,14 +1,14 @@
 import express from "express";
 import morgan from "morgan"
-import { organizerRouter } from "./features/organizer/router";
-import { createJSON, errorHandler, rateLimitHandler } from "./utils/globalHandler";
+import { organizerRouter } from "./features/organizer/router.js";
+import { createJSON, errorHandler, rateLimitHandler } from "./utils/globalHandler.js";
 import rateLimit from "express-rate-limit";
 import cookieParser from "cookie-parser"
-import { eventRouter } from "./features/events/eventRouter";
-import { createTicketRouter } from "./features/ticket/ticketRouter";
+import { eventRouter } from "./features/events/eventRouter.js";
+import { createTicketRouter } from "./features/ticket/ticketRouter.js";
 import cors from "cors"
 import helmet from "helmet";
-import { cfg } from "./cfg";
+import { cfg } from "./cfg.js";
 export function createApp(){
     const app = express()
     app.set("trust proxy", false)

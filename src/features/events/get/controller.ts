@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
-import { ERR_UNAUTHORIZED } from "../../../constants/http";
-import { getEventsByUserId } from "../eventRepo";
-import { EVENTS } from "../types";
-import { createJSON } from "../../../utils/globalHandler";
+import { ERR_UNAUTHORIZED } from "../../../constants/http.js";
+import { getEventsByUserId } from "../eventRepo.js";
+import { EVENTS } from "../types.js";
+import { createJSON } from "../../../utils/globalHandler.js";
 
 
 export async function getEvents(req: Request, res: Response){

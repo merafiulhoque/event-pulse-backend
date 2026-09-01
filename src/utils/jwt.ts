@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken"
-import { JWT_PAYLOAD } from "../types";
-import { cfg } from "../cfg";
-import { AppError } from "./globalHandler";
+import { JWT_PAYLOAD } from "../types/index.js";
+import { cfg } from "../cfg.js";
+import { AppError } from "./globalHandler.js";
 
 export function generateToken(data: JWT_PAYLOAD){
     const token = jwt.sign(

@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import { OrganizerCreateSchema } from "../types";
-import { service } from "./service";
-import { validateSchema } from "../../../utils/zodValidation";
+import { OrganizerCreateSchema } from "../types.js";
+import { service } from "./service.js";
+import { validateSchema } from "../../../utils/zodValidation.js";
 export async function controller(req: Request, res: Response) {
     const payload: unknown = req.body
     const data = validateSchema(payload, OrganizerCreateSchema)

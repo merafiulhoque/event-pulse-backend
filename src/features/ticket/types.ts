@@ -1,7 +1,7 @@
 
 import z from "zod"
-import { EVENTS } from "../events/types"
-import { Status } from "../../../generated/prisma/enums"
+import { EVENTS } from "../events/types.js"
+import { Status } from "../../generated/prisma/enums.js"
 
 export type EVENT_WITH_TICKET_COUNT = Omit<EVENTS, "organizerId" | "createdAt" | "updatedAt"> & {
     ticketCount: number

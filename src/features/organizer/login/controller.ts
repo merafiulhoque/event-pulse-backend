@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
-import { OrganizerLoginSchema } from "../types";
-import { service } from "./service";
-import { validateSchema } from "../../../utils/zodValidation";
+import { OrganizerLoginSchema } from "../types.js";
+import { service } from "./service.js";
+import { validateSchema } from "../../../utils/zodValidation.js";
 
 
 export async function controller(req: Request, res: Response){

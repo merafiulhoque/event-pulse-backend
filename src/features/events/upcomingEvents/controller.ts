@@ -1,9 +1,9 @@
 import { Request, Response } from "express";
-import { getUpcomingEvents } from "../eventRepo";
-import { createJSON } from "../../../utils/globalHandler";
-import { EVENTS } from "../types";
-import { redis } from "../../../lib/redis";
-import { REDIS_KEYS } from "../../../constants/redisKeys";
+import { getUpcomingEvents } from "../eventRepo.js";
+import { createJSON } from "../../../utils/globalHandler.js";
+import { EVENTS } from "../types.js";
+import { redis } from "../../../lib/redis.js";
+import { REDIS_KEYS } from "../../../constants/redisKeys.js";
 
 
 export const upcomingEventController = async (req: Request, res: Response) => {

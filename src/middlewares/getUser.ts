@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
-import { ERR_UNAUTHORIZED, ERR_MALFORMED_TOKEN } from "../constants/http";
-import { cfg } from "../cfg";
-import { verifyToken } from "../utils/jwt";
+import { ERR_UNAUTHORIZED, ERR_MALFORMED_TOKEN } from "../constants/http.js";
+import { cfg } from "../cfg.js";
+import { verifyToken } from "../utils/jwt.js";
 
 export function getUser(req: Request, res: Response, next: NextFunction){
 

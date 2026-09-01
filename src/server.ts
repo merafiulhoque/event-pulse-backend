@@ -1,6 +1,6 @@
-import { createApp } from "./app";
-import { cfg } from "./cfg";
-import { connectRedis } from "./lib/redis";
+import { createApp } from "./app.js";
+import { cfg } from "./cfg.js";
+import { connectRedis } from "./lib/redis.js";
 
 
 

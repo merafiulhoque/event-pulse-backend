@@ -1,7 +1,8 @@
 import { Request, Response } from "express";
-import { ERR_UNAUTHORIZED } from "../../../constants/http";
-import { createJSON } from "../../../utils/globalHandler";
-import { JWT_PAYLOAD } from "../../../types";
+import { ERR_UNAUTHORIZED } from "../../../constants/http.js";
+import { createJSON } from "../../../utils/globalHandler.js";
+import { JWT_PAYLOAD } from "../../../types/index.js";
+
 
 export async function getOrganizer(req: Request, res: Response){
     const dbVerifiedUser = req.user

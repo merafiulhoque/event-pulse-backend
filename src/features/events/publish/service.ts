@@ -1,7 +1,7 @@
-import { ApiResponse } from "../../../types/httpTypes";
-import { createJSON } from "../../../utils/globalHandler";
-import { createEvent, getEventByNamePlaceOrganizerId } from "../eventRepo";
-import { EVENT, EVENTS } from "../types";
+import { ApiResponse } from "../../../types/httpTypes.js";
+import { createJSON } from "../../../utils/globalHandler.js";
+import { createEvent, getEventByNamePlaceOrganizerId } from "../eventRepo.js";
+import { EVENT, EVENTS } from "../types.js";
 
 export async function service(organizerId: number, data: EVENT) : Promise<ApiResponse<EVENTS>>{
     const events = await getEventByNamePlaceOrganizerId(organizerId, data.name, data.place, data.date)

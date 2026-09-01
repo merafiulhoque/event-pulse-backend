@@ -1,11 +1,11 @@
 import { Router } from "express";
-import { asyncHandler, rateLimitHandler } from "../../utils/globalHandler";
-import { availabilityController } from "./checkAvailabality/controller";
-import { bookTicket } from "./book/controller";
+import { asyncHandler, rateLimitHandler } from "../../utils/globalHandler.js";
+import { availabilityController } from "./checkAvailabality/controller.js";
+import { bookTicket } from "./book/controller.js";
 import rateLimit from "express-rate-limit";
 import RedisStore from "rate-limit-redis";
-import { redis } from "../../lib/redis";
-import { downloadPdfController } from "./download/controller";
+import { redis } from "../../lib/redis.js";
+import { downloadPdfController } from "./download/controller.js";
 
 export const createTicketRouter = () => {
     const ticketRouter = Router()

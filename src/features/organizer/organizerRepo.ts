@@ -1,5 +1,5 @@
-import { prisma } from "../../lib/prisma";
-import { OrganizerCreateData } from "./types";
+import { prisma } from "../../lib/prisma.js";
+import { OrganizerCreateData } from "./types.js";
 
 export async function findOrganizerByEmail(email: string){
     const organizer = await prisma.organizer.findUnique({

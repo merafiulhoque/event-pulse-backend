@@ -1,8 +1,8 @@
-import { comparePassword } from "../../../utils/bcrypt";
-import { createJSON } from "../../../utils/globalHandler";
-import { generateToken } from "../../../utils/jwt";
-import { findOrganizerForLogin } from "../organizerRepo";
-import { OrganizerLoginData } from "../types";
+import { comparePassword } from "../../../utils/bcrypt.js";
+import { createJSON } from "../../../utils/globalHandler.js";
+import { generateToken } from "../../../utils/jwt.js";
+import { findOrganizerForLogin } from "../organizerRepo.js";
+import { OrganizerLoginData } from "../types.js";
 
 export async function service(data: OrganizerLoginData){
     const organizer = await findOrganizerForLogin(data.email)

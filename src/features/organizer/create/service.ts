@@ -1,7 +1,7 @@
-import { hashPassword } from "../../../utils/bcrypt";
-import { createJSON } from "../../../utils/globalHandler";
-import { OrganizerCreateData } from "../types";
-import { createOrganizer, findOrganizerByEmail } from "../organizerRepo";
+import { hashPassword } from "../../../utils/bcrypt.js";
+import { createJSON } from "../../../utils/globalHandler.js";
+import { OrganizerCreateData } from "../types.js";
+import { createOrganizer, findOrganizerByEmail } from "../organizerRepo.js";
 
 export async function service(payload: OrganizerCreateData){
     const organizer = await findOrganizerByEmail(payload.email)

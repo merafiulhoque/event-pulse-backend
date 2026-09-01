@@ -1,5 +1,5 @@
 import z from "zod"
-import { AppError } from "./globalHandler"
+import { AppError } from "./globalHandler.js"
 
 export const validateSchema = <T extends z.ZodType>(data: unknown, schema: T): z.infer<T> => {
     const result = schema.safeParse(data)

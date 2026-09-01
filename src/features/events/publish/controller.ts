@@ -1,10 +1,10 @@
 import { Request, Response } from "express";
-import { EVENT, EventCreateData, EventCreateSchema } from "../types";
-import { validateSchema } from "../../../utils/zodValidation";
-import { ERR_UNAUTHORIZED } from "../../../constants/http";
-import { service } from "./service";
-import { redis } from "../../../lib/redis";
-import { REDIS_KEYS } from "../../../constants/redisKeys";
+import { EVENT, EventCreateData, EventCreateSchema } from "../types.js";
+import { validateSchema } from "../../../utils/zodValidation.js";
+import { ERR_UNAUTHORIZED } from "../../../constants/http.js";
+import { service } from "./service.js";
+import { redis } from "../../../lib/redis.js";
+import { REDIS_KEYS } from "../../../constants/redisKeys.js";
 
 export async function eventPublishController(req: Request, res: Response){
     const user = req.user

@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
-import { service } from "./service";
-import { createJSON } from "../../../utils/globalHandler";
+import { service } from "./service.js";
+import { createJSON } from "../../../utils/globalHandler.js";
 
 export async function availabilityController(
   req: Request,

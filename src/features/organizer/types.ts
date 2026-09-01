@@ -1,5 +1,5 @@
 import z, { unknown } from "zod";
-import { AppError } from "../../utils/globalHandler";
+import { AppError } from "../../utils/globalHandler.js";
 
 export const OrganizerCreateSchema = z.object({
     name: z

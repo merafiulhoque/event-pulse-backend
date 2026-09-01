@@ -2,8 +2,8 @@ import PDFDocument from "pdfkit";
 import QRCode from "qrcode";
 import path from "path";
 import fs from "fs";
-import { TicketGenerationPayload } from "../types";
-import { Status } from "../../../../generated/prisma/enums";
+import { TicketGenerationPayload } from "../types.js";
+import { Status } from "../../../generated/prisma/enums.js";
 
 export async function generateTicketPDF(
   ticket: TicketGenerationPayload,

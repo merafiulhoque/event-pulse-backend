@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
-import { TicketBookingSchema } from "../types";
-import { AppError, createJSON } from "../../../utils/globalHandler";
-import { validateSchema } from "../../../utils/zodValidation";
-import { service } from "./service";
+import { TicketBookingSchema } from "../types.js";
+import { AppError, createJSON } from "../../../utils/globalHandler.js";
+import { validateSchema } from "../../../utils/zodValidation.js";
+import { service } from "./service.js";
 
 
 export async function bookTicket(req: Request, res: Response){

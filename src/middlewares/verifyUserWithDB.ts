@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
-import { ERR_UNAUTHORIZED } from "../constants/http";
-import { prisma } from "../lib/prisma";
-import { JWT_PAYLOAD } from "../types";
+import { ERR_UNAUTHORIZED } from "../constants/http.js";
+import { prisma } from "../lib/prisma.js";
+import { JWT_PAYLOAD } from "../types/index.js";
 
 export async function verifyUserWIthDB(req: Request, res: Response, next: NextFunction){
     const user = req.user

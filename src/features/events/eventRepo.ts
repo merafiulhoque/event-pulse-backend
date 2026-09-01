@@ -1,5 +1,5 @@
-import { prisma } from "../../lib/prisma";
-import { EVENT, EVENTS } from "./types";
+import { prisma } from "../../lib/prisma.js";
+import { EVENT, EVENTS } from "./types.js";
 
 export async function getEventsByUserId(organizerId: number){
     const events = await prisma.event.findMany({

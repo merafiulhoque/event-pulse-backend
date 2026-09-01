@@ -1,5 +1,5 @@
-import { createJSON } from "../../../utils/globalHandler";
-import { getEvent } from "../ticketRepo";
+import { createJSON } from "../../../utils/globalHandler.js";
+import { getEvent } from "../ticketRepo.js";
 
 export async function service(id: number){
     const eventDetails = await getEvent(id)

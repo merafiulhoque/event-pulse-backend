@@ -1,8 +1,8 @@
-import { generateTicketPDF } from "./generatePdf";
-import { service } from "./service";
+import { generateTicketPDF } from "./generatePdf.js";
+import { service } from "./service.js";
 import { Request, Response } from "express";
-import { ERR_INVALID_REQUEST } from "../../../constants/http";
-import { cfg } from "../../../cfg";
+import { ERR_INVALID_REQUEST } from "../../../constants/http.js";
+import { cfg } from "../../../cfg.js";
 
 export async function downloadPdfController(req: Request, res: Response) {
     const id = Number(req.params.id);

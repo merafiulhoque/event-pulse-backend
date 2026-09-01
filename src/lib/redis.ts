@@ -1,8 +1,16 @@
 import { createClient } from "redis";
-import { cfg } from "../cfg";
+import { cfg } from "../cfg.js";
 
 export const redis = createClient({
-    url: cfg.NODE_ENV === "production" ? cfg.REDIS_URL : "redis://localhost:6379"
+    url: cfg.REDIS_URL,
+    socket: {
+        reconnectStrategy: (retries, cause) => {
+            if(retries > 10){
+                return new Error("Too many reconnect retries")
+            }
+            return Math.min(retries*100, 3000)
+        },
+    }
 })
 
 redis.on("error" , (err) => {
