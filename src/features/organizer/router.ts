@@ -21,6 +21,12 @@ const loginLimit = rateLimit({
     handler: rateLimitHandler
 })
 
+const meLimit = rateLimit({
+  limit: 60,
+  windowMs: 60 * 1000,
+  handler: rateLimitHandler,
+});
+
 organizerRouter.post("/create", createLimit, asyncHandler(OrganizerCreateController))
 organizerRouter.post("/login", loginLimit, asyncHandler(LoginController))
-organizerRouter.get("/me", getUser, verifyUserWIthDB, asyncHandler(getOrganizer))
+organizerRouter.get("/me", meLimit, getUser, verifyUserWIthDB, asyncHandler(getOrganizer))
