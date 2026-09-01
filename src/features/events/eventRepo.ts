@@ -1,5 +1,5 @@
 import { prisma } from "../../lib/prisma.js";
-import { EVENT, EVENTS } from "./types.js";
+import { EVENT, EVENTS, LIVE_EVENTS } from "./types.js";
 
 export async function getEventsByUserId(organizerId: number){
     const events = await prisma.event.findMany({
@@ -41,4 +41,30 @@ export async function getUpcomingEvents(): Promise<EVENTS[]>{
         }
     })
     return upcomingEvents
+}
+
+export async function getLiveEvents() : Promise<LIVE_EVENTS[]>{
+    const now = new Date()
+    const events = await prisma.event.findMany({
+        where: {
+            date: {
+                gt: now
+            }
+        },
+        select: {
+            id: true,
+            name: true,
+            place: true,
+            bookingStart: true,
+            bookingEnd: true,
+            capacity: true,
+            _count: {
+                select: {
+                    tickets: true
+                }
+            }
+        }
+    })
+    console.log(events)
+    return events
 }

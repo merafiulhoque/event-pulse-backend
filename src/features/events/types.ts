@@ -36,3 +36,14 @@ export interface EVENTS {
     updatedAt: Date;
 }
 
+export interface LIVE_EVENTS {
+    id: number;
+    name: string;
+    place: string;
+    capacity: number;
+    bookingStart: Date;
+    _count: {
+        tickets: number;
+    };
+}
+

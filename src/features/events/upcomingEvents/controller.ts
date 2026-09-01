@@ -9,7 +9,7 @@ import { REDIS_KEYS } from "../../../constants/redisKeys.js";
 export const upcomingEventController = async (req: Request, res: Response) => {
 
     const redisEntry = await redis.get(REDIS_KEYS.ALL_UPCOMING_EVENTS)
-
+    
     if(!redisEntry){
         const upcomingEvents = await getUpcomingEvents()
         await redis.set(
