@@ -1,0 +1,48 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Status {
+  PENDING
+  CONFIRMED
+  CANCELLED
+}
+
+model Organizer {
+  id Int @id @default(autoincrement())
+  name String
+  email String @unique
+  password String
+  events Event[]
+}
+
+model Event {
+  id Int @id @default(autoincrement())
+  name String
+  place String
+  date DateTime
+  capacity Int
+  organizerId Int
+  organizer Organizer @relation(fields: [organizerId], references: [id])
+  tickets Ticket[]
+  bookingStart DateTime @default(now())
+  bookingEnd DateTime
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Ticket {
+  id Int @id @default(autoincrement())
+  eventId Int
+  event Event @relation(fields: [eventId], references: [id])
+  name String
+  email String
+  phone String
+  status Status
+  idempotencyKey String @unique
+}
